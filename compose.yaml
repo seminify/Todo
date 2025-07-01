@@ -1,0 +1,20 @@
+services:
+  nginx:
+    env_file: .env
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/templates
+  mysql:
+    env_file: .env
+    image: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+  spring:
+    command: gradle bootrun
+    env_file: .env
+    image: gradle
+    volumes:
+      - ./:/todo
+    working_dir: /todo/spring

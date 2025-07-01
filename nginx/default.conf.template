@@ -1,0 +1,10 @@
+server {
+    listen       ${NGINX_SPRING_LISTEN};
+    server_name  ${NGINX_SPRING_SERVER_NAME};
+    location / {
+        proxy_pass ${NGINX_SPRING_PROXY_PASS};
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}

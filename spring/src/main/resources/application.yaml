@@ -1,0 +1,17 @@
+server:
+  port: ${SPRING_PORT}
+spring:
+  application:
+    name: application
+  datasource:
+    password: ${SPRING_PASSWORD}
+    url: ${SPRING_URL}
+    username: ${SPRING_USERNAME}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        "[format_sql]": true
+        "[highlight_sql]": true
+    show-sql: true
