@@ -1,5 +1,7 @@
 package org.seminify.application.dto;
 
+import org.seminify.application.entity.TodoEntity;
+
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -9,4 +11,8 @@ public class TodoDTO {
     private Long id;
     private String title;
     private Boolean done;
+
+    public TodoEntity todoEntity() {
+        return todoEntity().setId(id).setTitle(title).setDone(done);
+    }
 }
